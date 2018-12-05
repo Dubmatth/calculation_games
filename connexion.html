@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Connexion des joueurs</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <h1>Connexion</h1>
+
+    <select id="selectJoueur" onchange="showName(event)" required>
+        <option>Selectionnez</option>
+    </select>
+    <p>Nom : <span id="nomJ"></span></p>
+    <p>Prénom : <span id="prenomJ"></span></p>
+    <p>
+        <label>Timer : </label><strong><input id="timer"></strong>
+    </p>
+    <label>Durée : </label><input type="text" placeholder="Durée" id="dureeC" value="0"><span> Sec</span>
+    <button id="btnJouer" onclick="play()">Commencer à jouer</button>
+    <label>Nb de bonne réponses : </label><strong><span id="nbBonneRep"></span></strong>
+
+    <div id="game" style="margin-top: 30px;text-align: center" hidden>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nb1</th>
+                    <th>Op</th>
+                    <th>Nb2</th>
+                    <th>=</th>
+                    <th>Réponse</th>
+                    <th>Valider</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr id="trModCalc" hidden>
+                    <td><input type="text" class="calc_nb1" disabled></td>
+                    <td><input type="text" class="calc_op" disabled></td>
+                    <td><input type="text" class="calc_nb2" disabled></td>
+                    <td>=</td>
+                    <td><input type="text" class="calcRep"></td>
+                    <td><button class="calcBtnOk">Ok</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+<script src="connexion-2.js"></script>
+</body>
+</html>
